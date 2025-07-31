@@ -3,13 +3,19 @@
 @theme  {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-button: rgb(224, 126, 27);
-  --color-button-100: rgb(237, 139, 42);
-  --shadow-btnShadow: 3px 3px 5px rgba(0, 0, 0, 0.2) ;
-  
+  --color-secondary: rgb(224, 126, 27);
+  --color-secondary-100: rgb(237, 139, 42);
+  --color-primary: rgb(241, 241, 242);
+  --color-primary-100: rgb(227, 227, 229);
+  --color-primary-200: rgb(212, 212, 214);
+  --shadow-btnShadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Roboto';
   background-color: rgb(241, 241, 242);
+  padding-bottom: 2000px;
 }

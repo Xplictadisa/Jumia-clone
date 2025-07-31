@@ -9,7 +9,7 @@ export default function Star({
 }: {
   width: number;
   height: number;
-  className: string
+  className?: string
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
