@@ -13,8 +13,9 @@ function LeftNav() {
   const [category, setCategory] = useState('appliances')
   const [data, setData] = useState<data[]>([])
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (category: string) => {
     setIsHovering(true);
+    setCategory(category)
   };
   const handleMouseLeave = () => {
     setIsHovering(false);
@@ -39,7 +40,7 @@ function LeftNav() {
       <ul>
         {leftNavData.map((n) => (
           <li
-            onMouseEnter={handleMouseEnter}
+            onMouseEnter={() => {handleMouseEnter(n.category)}}
             onMouseLeave={handleMouseLeave}
             className="flex items-center py-1.5 gap-1 text-[12px] hover:text-secondary-100 cursor-pointer"
             key={n.type}
@@ -51,11 +52,16 @@ function LeftNav() {
       </ul>
       {isHovering && (
         <div
-          onMouseEnter={handleMouseEnter}
+          onMouseEnter={() => {setIsHovering(true)}}
           onMouseLeave={handleMouseLeave}
-          className="absolute top-0 z-50 bg-white left-[98%] h-full w-[730px] border-l-1 border-l-primary-100 rounded-tr-[5px] rounded-br-[5px] overflow-hidden"
+          className="absolute top-0 z-50 bg-white left-[98%] h-full w-[730px] p-2 border-l-1 border-l-primary-100 rounded-tr-[5px] rounded-br-[5px] overflow-hidden columns-3 gap-8"
         >
-          {/* {data && data[0].title} */}
+          {data && data.map((c) => <div key={c.title}>
+            <p className="border-b border-primary-100 py-1 text-[13px] font-medium mb-2 hover:text-secondary cursor-pointer">{c.title}</p>
+            <ul>
+              {c.list.map((list, index) => <li key={index} className="text-[12px] py-1 font-light hover:font-medium cursor-pointer">{list}</li>)}
+            </ul>
+          </div>)}
         </div>
       )}
     </div>

@@ -6,7 +6,7 @@ import { PiVan } from "react-icons/pi";
 function RightNav() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="h-[50%] w-full bg-white rounded-[5px] shadow-btnShadow px-4 py-8 flex flex-col justify-between">
+      <div className="h-1/2 w-full bg-white rounded-[5px] shadow-btnShadow px-4 py-8 flex flex-col justify-between">
         <div className="flex gap-2 items-center">
           <IoIosCall className="text-[30px] border border-secondary rounded-full text-gray-500" />
           <div className="flex flex-col overflow-hidden ">
@@ -29,7 +29,9 @@ function RightNav() {
       </div>
 
       {/* second box */}
-      <div className="h-[50%] w-full bg-secondary-100 rounded-[5px]"></div>
+      <div className="h-1/2 w-full bg-secondary-100 rounded-[5px] p-5 flex flex-col justify-end items-center">
+        <span className="text-white text-[30px] animate-blink">JOIN NOW</span>
+      </div>
     </div>
   );
 }

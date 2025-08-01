@@ -1,10 +1,8 @@
-"use client";
-
 import { IoMdHelpCircleOutline } from "react-icons/io";
-import { IoIosArrowDown,  IoIosArrowUp} from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsChatLeftDots } from "react-icons/bs";
 import Button from "./button";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 function HelpDropDown() {
   return (
@@ -23,7 +21,7 @@ function HelpDropDown() {
           type="button"
           className="bg-secondary-100 w-full h-10 flex items-center gap-3 pl-4 text-white rounded-[5px] shadow-btnShadow hover:bg-secondary cursor-pointer"
         >
-          <BsChatLeftDots className="text-[20px]"/>
+          <BsChatLeftDots className="text-[20px]" />
           Live Chat
         </Button>
       </div>
@@ -31,24 +29,31 @@ function HelpDropDown() {
   );
 }
 
-function Help() {
-  const [isOpen, setIsOpen] = useState(false);
+type helpProps = {
+  isHelpOpen: boolean;
+  setIsHelpOpen: Dispatch<SetStateAction<boolean>>;
+  setIsAccountOpen: Dispatch<SetStateAction<boolean>>;
+};
 
+function Help({ isHelpOpen, setIsHelpOpen, setIsAccountOpen }: helpProps) {
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsHelpOpen(!isHelpOpen);
+    setIsAccountOpen(false);
   };
 
   return (
     <div
       onClick={handleClick}
-      className={`relative rounded-[3px] p-2 ${isOpen ? "bg-primary-200" : ""}`}
+      className={`relative rounded-[3px] p-2 ${
+        isHelpOpen ? "bg-primary-200" : ""
+      }`}
     >
       <div className="text-black hover:text-secondary cursor-pointer flex items-end gap-2 font-semibold">
         <IoMdHelpCircleOutline className="text-[25px]" />
         <p className="mb-[-4px]">Help</p>
-        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />} 
+        {isHelpOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </div>
-      {isOpen && <HelpDropDown />}
+      {isHelpOpen && <HelpDropDown />}
     </div>
   );
 }

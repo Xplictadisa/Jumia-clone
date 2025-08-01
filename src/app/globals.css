@@ -9,7 +9,11 @@
   --color-primary-100: rgb(227, 227, 229);
   --color-primary-200: rgb(212, 212, 214);
   --shadow-btnShadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  --shadow-card: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  --animate-blink: blink 2s ease infinite;
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -17,5 +21,13 @@
 body {
   font-family: 'Roboto';
   background-color: rgb(241, 241, 242);
-  padding-bottom: 2000px;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

@@ -16,29 +16,77 @@ import { IoGameControllerOutline } from "react-icons/io5";
 type leftNav = {
   icon?: ReactElement<IconType>;
   type: string;
+  category:
+    | "appliances"
+    | "phones"
+    | "health"
+    | "office"
+    | "electronics"
+    | "fashion"
+    | "supermarket"
+    | "computing"
+    | "baby"
+    | "gaming"
+    | "others"
+    | "musical";
 };
 
 export const leftNavData: leftNav[] = [
-  { icon: <PiCookingPot className="text-[22px]" />, type: "Appliances" },
+  {
+    icon: <PiCookingPot className="text-[22px]" />,
+    type: "Appliances",
+    category: "appliances",
+  },
   {
     icon: <IoIosPhonePortrait className="text-[22px]" />,
     type: "Phones & Tablets",
+    category: "phones",
   },
-  { icon: <GiLipstick className="text-[22px]" />, type: "Health & Beauty" },
-  { icon: <GoHome className="text-[22px]" />, type: "Home & Office" },
+  {
+    icon: <GiLipstick className="text-[22px]" />,
+    type: "Health & Beauty",
+    category: "health",
+  },
+  {
+    icon: <GoHome className="text-[22px]" />,
+    type: "Home & Office",
+    category: "office",
+  },
   {
     icon: <PiTelevisionSimpleFill className="text-[22px]" />,
     type: "Electronics",
+    category: "electronics",
   },
-  { icon: <PiTShirtThin className="text-[22px]" />, type: "Fashion" },
-  { icon: <CiApple className="text-[22px]" />, type: "Supermarket" },
-  { icon: <IoIosDesktop className="text-[22px]" />, type: "Computing" },
-  { icon: <LuBaby className="text-[22px]" />, type: "Baby Products" },
-  { icon: <IoGameControllerOutline className="text-[22px]" />, type: "Gaming" },
-  { type: "Musical Instruments" },
+  {
+    icon: <PiTShirtThin className="text-[22px]" />,
+    type: "Fashion",
+    category: "fashion",
+  },
+  {
+    icon: <CiApple className="text-[22px]" />,
+    type: "Supermarket",
+    category: "supermarket",
+  },
+  {
+    icon: <IoIosDesktop className="text-[22px]" />,
+    type: "Computing",
+    category: "computing",
+  },
+  {
+    icon: <LuBaby className="text-[22px]" />,
+    type: "Baby Products",
+    category: "baby",
+  },
+  {
+    icon: <IoGameControllerOutline className="text-[22px]" />,
+    type: "Gaming",
+    category: "gaming",
+  },
+  { type: "Musical Instruments", category: "musical" },
   {
     icon: <PiDotsThreeCircleLight className="text-[22px]" />,
     type: "Other categories",
+    category: "others",
   },
 ];
 

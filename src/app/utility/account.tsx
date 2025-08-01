@@ -1,11 +1,9 @@
-"use client";
-
 import { IoPersonOutline } from "react-icons/io5";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LuPackage2 } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
 import Button from "./button";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 function AccountDropDown() {
   return (
@@ -37,24 +35,35 @@ function AccountDropDown() {
   );
 }
 
-function Account() {
-  const [isOpen, setIsOpen] = useState(false);
+type accountProp = {
+  setIsHelpOpen: Dispatch<SetStateAction<boolean>>;
+  isAccountOpen: boolean;
+  setIsAccountOpen: Dispatch<SetStateAction<boolean>>;
+};
 
+function Account({
+  setIsHelpOpen,
+  isAccountOpen,
+  setIsAccountOpen,
+}: accountProp) {
   const handleClick = () => {
-    setIsOpen(!isOpen);
+    setIsAccountOpen(!isAccountOpen);
+    setIsHelpOpen(false);
   };
 
   return (
     <div
       onClick={handleClick}
-      className={`relative rounded-[3px] p-2 ${isOpen ? "bg-primary-200" : ""}`}
+      className={`relative rounded-[3px] p-2 ${
+        isAccountOpen ? "bg-primary-200" : ""
+      }`}
     >
       <div className="text-black hover:text-secondary cursor-pointer flex font-semibold items-end gap-2">
         <IoPersonOutline className="text-[25px]" />
         <span className="mb-[-4px] text-[16px]">Account</span>
-        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />} 
+        {isAccountOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </div>
-      {isOpen && <AccountDropDown />}
+      {isAccountOpen && <AccountDropDown />}
     </div>
   );
 }
