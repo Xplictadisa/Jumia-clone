@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { IoIosCall } from "react-icons/io";
 import { MdHouseSiding } from "react-icons/md";
 import { PiVan } from "react-icons/pi";
-
 
 function RightNav() {
   return (
@@ -29,12 +29,17 @@ function RightNav() {
       </div>
 
       {/* second box */}
-      <div className="h-1/2 w-full bg-secondary-100 rounded-[5px] p-5 flex flex-col justify-end items-center">
-        <span className="text-white text-[30px] animate-blink">JOIN NOW</span>
+      <div className="h-1/2 w-full">
+        <Image
+          src="/images/jumia-force.gif"
+          alt="jumia-force"
+          width={100}
+          height={100}
+          className="w-full h-full rounded-[5px]"
+        />
       </div>
     </div>
   );
 }
 
-
-export default RightNav
+export default RightNav;

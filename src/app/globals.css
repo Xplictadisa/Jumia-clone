@@ -8,6 +8,8 @@
   --color-primary: rgb(241, 241, 242);
   --color-primary-100: rgb(227, 227, 229);
   --color-primary-200: rgb(212, 212, 214);
+  --color-disc: rgb(254, 243, 233);
+  --color-disc-1: rgb(240, 220, 194);
   --shadow-btnShadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   --shadow-card: 3px 3px 10px rgba(0, 0, 0, 0.1);
   --animate-blink: blink 2s ease infinite;
@@ -21,6 +23,7 @@
 body {
   font-family: 'Roboto';
   background-color: rgb(241, 241, 242);
+  background-image: linear-gradient();
 }
 
 @keyframes blink {

@@ -1,6 +1,6 @@
-import LeftNav from "../utility/leftnav";
-import RightNav from "../utility/rightNav";
-import MiddleNav from "../utility/middleNav";
+import LeftNav from "../ui/leftnav";
+import RightNav from "../ui/rightNav";
+import MiddleNav from "../ui/middleNav";
 
 function RowOne() {
   return (
@@ -13,8 +13,3 @@ function RowOne() {
 }
 
 export default RowOne;
-
-
-
-
-
