@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { formatPrice } from "../utility/utility";
 import FormatPrice from "./formatPrice";
 
 type product = {
@@ -25,7 +24,7 @@ function ProductCard({ data }: product) {
         alt="top goods"
         width={180}
         height={320}
-        className="rounded-[5px]"
+        className="rounded-[5px] w-[180px] h-[190px]"
       />
       <div className="text-nowrap font-light text-[15px] text-ellipsis overflow-hidden px-2">
         {data.description}

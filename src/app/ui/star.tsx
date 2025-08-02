@@ -5,11 +5,15 @@ import { useEffect, useRef } from "react";
 export default function Star({
   width,
   height,
-  className
+  className,
+  circleColor,
+  starColor
 }: {
   width: number;
   height: number;
-  className?: string
+  className?: string;
+  circleColor: string;
+  starColor: string
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -24,9 +28,9 @@ export default function Star({
     const outerRadius = radius - 3;
     const innerRadius = outerRadius * 0.5;
 
-    drawCircle(ctx, centerX, centerY, radius);
-    drawStar(ctx, centerX, centerY, 5, outerRadius, innerRadius);
-  }, [height, width]);
+    drawCircle(ctx, centerX, centerY, radius, circleColor);
+    drawStar(ctx, centerX, centerY, 5, outerRadius, innerRadius, starColor);
+  }, [height, width, circleColor, starColor]);
 
   return <canvas className={className} ref={canvasRef}>star</canvas>;
 }
@@ -38,7 +42,9 @@ function drawStar(
   cy: number,
   spikes: number,
   outerRadius: number,
-  innerRadius: number
+  innerRadius: number,
+  color: string
+  
 ) {
   let rot = (Math.PI / 2) * 3;
   let x = cx;
@@ -62,20 +68,22 @@ function drawStar(
 
   ctx.lineTo(cx, cy - outerRadius);
   ctx.closePath();
-  ctx.fillStyle = "white";
+  ctx.fillStyle = color;
   ctx.fill();
-  ctx.strokeStyle = "white";
+  ctx.strokeStyle = color;
   ctx.stroke();
 }
 
+// 
 function drawCircle(
   ctx: CanvasRenderingContext2D,
   centerX: number,
   centerY: number,
-  radius: number
+  radius: number,
+  color: string
 ) {
   ctx.beginPath();
-  ctx.fillStyle = "orange";
+  ctx.fillStyle = color;
   ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
   ctx.fill();
   ctx.closePath();

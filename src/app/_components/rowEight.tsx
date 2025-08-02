@@ -1,7 +1,7 @@
-import { rowFiveData } from "../_data/rowFive";
+import { rowEightData } from "../_data/rowEight";
 import ProductCard from "../ui/productCard";
-import Title from "../ui/title";
 import Discount from "../ui/discount";
+import Title from "../ui/title";
 
 type data = {
   image: string;
@@ -12,14 +12,15 @@ type data = {
   };
 };
 
-function RowFive() {
-  const data: data[] = rowFiveData;
+function RowEight() {
+  const data: data[] = rowEightData;
+
   return (
     <div className="px-11 mt-5">
       <div className="rounded-[5px] w-full shadow-btnShadow bg-white pb-2">
-        <Title title="Top Sellers" link="www.facebook.com"/>
-      {/*  */}
-      <div style={{scrollbarWidth: "none"}} className="flex gap-3 overflow-x-scroll p-2">
+        <Title title="Limited Stock Deals" link="www.facebook.com" />
+        {/*  */}
+        <div style={{scrollbarWidth: "none"}} className="grid grid-cols-6 gap-3 overflow-x-scroll p-2">
         {data &&
           data.map((d, index) => (
             <div className="w-[180px] hover:shadow-card hover:scale-[1.01] rounded-[5px] cursor-pointer relative" key={index}>
@@ -33,4 +34,4 @@ function RowFive() {
   );
 }
 
-export default RowFive;
+export default RowEight;
