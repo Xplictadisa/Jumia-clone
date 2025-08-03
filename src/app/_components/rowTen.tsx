@@ -1,4 +1,4 @@
-import { rowSixData } from "../_data/rowSix";
+import { rowTenData } from "../_data/rowTen";
 import ProductCard from "../ui/productCard";
 import Discount from "../ui/discount";
 import Title2 from "../ui/title2";
@@ -12,13 +12,13 @@ type data = {
   };
 };
 
-function RowSix() {
-  const data: data[] = rowSixData;
+function RowTen() {
+  const data: data[] = rowTenData;
 
   return (
     <div className="px-11 mt-5">
       <div className="rounded-[5px] w-full shadow-btnShadow bg-white pb-2">
-        <Title2 title="Sponsored Products"/>
+        <Title2 title="Top selling items"/>
         {/*  */}
         <div
           style={{ scrollbarWidth: "none" }}
@@ -40,4 +40,4 @@ function RowSix() {
   );
 }
 
-export default RowSix;
+export default RowTen;

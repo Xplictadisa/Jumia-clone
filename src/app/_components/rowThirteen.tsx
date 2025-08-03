@@ -1,4 +1,4 @@
-import { rowEightData } from "../_data/rowEight";
+import { rowThirteenData } from "../_data/rowThirteen";
 import ProductCard from "../ui/productCard";
 import Discount from "../ui/discount";
 import Title from "../ui/title";
@@ -12,13 +12,13 @@ type data = {
   };
 };
 
-function RowEight() {
-  const data: data[] = rowEightData;
+function RowThirteen() {
+  const data: data[] = rowThirteenData;
 
   return (
     <div className="px-11 mt-5">
       <div className="rounded-[5px] w-full shadow-btnShadow bg-white pb-2">
-        <Title title="Pay Day Deals" link="www.facebook.com" />
+        <Title title="Televison and Audio deals" link="www.facebook.com" />
         {/*  */}
         <div style={{scrollbarWidth: "none"}} className="flex gap-3 overflow-x-scroll p-2">
         {data &&
@@ -34,4 +34,4 @@ function RowEight() {
   );
 }
 
-export default RowEight;
+export default RowThirteen;

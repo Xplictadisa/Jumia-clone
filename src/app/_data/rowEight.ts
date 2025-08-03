@@ -50,20 +50,12 @@ export const rowEightData = [
     },
   },
   {
-    image: "/images/rowEight/11.jpg",
+    image: "/images/rowEight/7.jpg",
     description:
       "Machislet New Slim-fit, Backless Dress With Hips Party Dress Casual Dress Off-Shoulder Dress",
     price: {
       old: 9541,
       new: 5725,
-    },
-  },
-  {
-    image: "/images/rowEight/7.jpg",
-    description: "Blood Pressure Monitor Health Monitor Heartbeat BP Monitor",
-    price: {
-      old: 19772,
-      new: 6683,
     },
   },
   {
@@ -92,7 +84,7 @@ export const rowEightData = [
     },
   },
   {
-    image: "/images/rowEight/12.jpg",
+    image: "/images/rowEight/11.jpg",
     description: "NIVEA Sun UV Sunscreen Face Shine Control Cream SPF 50 - 50ml",
     price: {
       old: 10920,
@@ -100,7 +92,7 @@ export const rowEightData = [
     },
   },
   {
-    image: "/images/rowEight/14.jpg",
+    image: "/images/rowEight/12.jpg",
     description: "TINMO Airfryer 10L Volume, 8L Storage Capacity, Model (OLM-KZB006) 1400W+ 12 Months Warranty",
     price: {
       old: 55870,

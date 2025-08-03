@@ -12,7 +12,7 @@ export default function Header() {
   const [isAccountOpen, setIsAccountOpen] = useState(false);
 
   return (
-    <div className="flex items-center h-[80px] bg-white px-11 gap-[20px] sticky top-0 z-30">
+    <div className="flex items-center h-[80px] bg-white px-11 gap-[20px] sticky top-0 z-100">
       <Logo
         width={100}
         height={50}
