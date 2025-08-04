@@ -25,7 +25,7 @@ type data = {
 function RowThree() {
   const [data, setData] = useState<data[]>([]);
   const [dataFetched, setDataFetched] = useState(false);
-  const [rightArrow, setRightArrow] = useState(false);
+  const [rightArrow] = useState(false);
   const [leftArrow, setLeftArrow] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
