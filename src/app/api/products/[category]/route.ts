@@ -14,8 +14,6 @@ import {
   others,
 } from "@/app/_data/product-category";
 
-
-
 const allCategory = {
   appliances,
   phones,
@@ -28,14 +26,14 @@ const allCategory = {
   gaming,
   musical,
   computing,
-  others
+  others,
 };
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Record<string, string> }
 ) {
-  const { category } = params;
+  const category = params.category;
   const data = allCategory[category as keyof typeof allCategory];
 
   return NextResponse.json(data);
