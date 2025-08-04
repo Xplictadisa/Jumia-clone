@@ -15,6 +15,12 @@ import {
   others,
 } from "@/app/_data/product-category";
 
+type RouteContext = {
+  params: {
+    category: keyof typeof allCategory;
+  };
+};
+
 const allCategory = {
   appliances,
   phones,
@@ -30,15 +36,15 @@ const allCategory = {
   others,
 };
 
-
 export async function GET(
   request: NextRequest,
-  { params }: { params: { category: string } }
+  {params}: {params: Promise<{category: string}>}
 ) {
-   const {category} = params;
+  const { category } = await params;
   const data = allCategory[category as keyof typeof allCategory];
 
   return NextResponse.json(data);
 }
+
 
 
