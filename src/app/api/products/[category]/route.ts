@@ -15,11 +15,6 @@ import {
   others,
 } from "@/app/_data/product-category";
 
-type RouteContext = {
-  params: {
-    category: keyof typeof allCategory;
-  };
-};
 
 const allCategory = {
   appliances,
