@@ -23,6 +23,7 @@ import RowTwentyTwo from "./rowTwentyTwo";
 import RowTwentyThree from "./rowTwentyThree";
 import RowTwentyFour from "./rowTwentyFour";
 import RowTwentyFive from "./rowTwentyFive";
+import About from "./about";
 
 function Main() {
   return (
@@ -52,6 +53,7 @@ function Main() {
       <RowTwentyThree />
       <RowTwentyFour />
       <RowTwentyFive />
+      <About />
     </>
   );
 }
