@@ -1,3 +1,4 @@
+
 import { NextRequest, NextResponse } from "next/server";
 import {
   appliances,
@@ -29,12 +30,15 @@ const allCategory = {
   others,
 };
 
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: Record<string, string> }
+  { params }: { params: { category: string } }
 ) {
-  const category = params.category;
+   const {category} = params;
   const data = allCategory[category as keyof typeof allCategory];
 
   return NextResponse.json(data);
 }
+
+
