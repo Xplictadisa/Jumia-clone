@@ -8,7 +8,7 @@ type data = {
 
 function RowFour() {
   const data: data[] = rowFourData;
-  console.log(data);
+  
   return (
     <div className="px-11">
       <div className="shadow-btnShadow rounded-[5px] bg-white grid grid-cols-6 gap-3 mt-5 p-2">

@@ -111,15 +111,6 @@ export const rowSixteenData = [
    {
     image: "/images/rowSixteen/14.jpg",
     description:
-      "Binatone 1.5HP Split Air Conditioner Inverter (ACSTAV-12) With 5 Years Compressor Warranty",
-    price: {
-      old: 391069,
-      new: 387999,
-    },
-  },
-   {
-    image: "/images/rowSixteen/15.jpg",
-    description:
       "NIVEA Sun UV Sunscreen Face Shine Control Cream SPF 50 - 50ml",
     price: {
       old: 10920,

@@ -58,7 +58,7 @@ function RowTwo() {
                 alt="image"
                 width={130}
                 height={160}
-                className="rounded-[5px] w-full"
+                className="rounded-[5px]"
               />
               <p className="text-center text-[14px] px-4">{d.description}</p>
             </div>

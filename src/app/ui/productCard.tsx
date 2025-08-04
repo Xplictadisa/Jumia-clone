@@ -23,8 +23,8 @@ function ProductCard({ data }: product) {
         src={data.image}
         alt="top goods"
         width={180}
-        height={320}
-        className="rounded-[5px] w-[180px] h-[190px]"
+        height={190}
+        className="rounded-[5px]"
       />
       <div className="text-nowrap font-light text-[15px] text-ellipsis overflow-hidden px-2">
         {data.description}

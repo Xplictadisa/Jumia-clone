@@ -1,12 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { useEffect, useState, useRef } from "react";
 import ProductCard from "../ui/productCard";
-import { countDown } from "../utility/utility";
 import StockProgress from "../ui/stockProgress";
 import Discount from "../ui/discount";
 import axios from "axios";
-import Star from "../ui/star";
+import ArrowRight from "../ui/arrowRight";
+import ArrowLeft from "../ui/arrowLeft";
+import Title3 from "../ui/title3";
 
 type data = {
   image: string;
@@ -21,43 +21,13 @@ type data = {
   };
 };
 
-function Header() {
-  const [timeLeft, setTimeLeft] = useState(5400);
-  const timer = countDown(timeLeft);
-
-  useEffect(() => {
-    // promo time count
-    if (timeLeft <= 0) return;
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [timeLeft]);
-
-  return (
-    <div className="bg-red-600 h-12 rounded-t-[5px] flex justify-between items-center px-6 text-white">
-      <div>
-        <span>Flash Sales</span>
-      </div>
-      <div>
-        <span className="mr-2">Time Left</span>
-        <span>{timer}</span>
-      </div>
-      <div className="flex items-center gap-1">
-        <span> See All</span>
-        <MdOutlineKeyboardArrowRight />
-      </div>
-    </div>
-  );
-}
-
 //
 function RowThree() {
   const [data, setData] = useState<data[]>([]);
   const [dataFetched, setDataFetched] = useState(false);
+  const [rightArrow, setRightArrow] = useState(false);
+  const [leftArrow, setLeftArrow] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -72,13 +42,24 @@ function RowThree() {
     getProduct();
   }, []);
 
+  // effect to track state of left and right arrow
+  useEffect(() => {
+    if (dataFetched) {
+      const elem = containerRef.current!;
+      elem.addEventListener("scroll", () => {
+        if (elem.scrollLeft > 0) {
+          setLeftArrow(true);
+        } else {setLeftArrow(false)}
+      });
+    }
+  }, [dataFetched]);
+
   if (!dataFetched) {
     return (
       <div className="px-11 mt-5">
         <div className="bg-white w-full rounded-[5px] shadow-btnShadow">
-          <Header />
+          <Title3 />
           <div className="flex justify-center  h-60 items-center">
-            {/* <Star width={50} height={50} circleColor="gray" starColor="white" /> */}
             <p>Loading</p>
           </div>
         </div>
@@ -88,9 +69,10 @@ function RowThree() {
 
   return (
     <div className="px-11 mt-5">
-      <div className="rounded-[5px] w-full shadow-btnShadow  bg-white pb-2">
-        <Header />
+      <div className="rounded-[5px] w-full shadow-btnShadow bg-white pb-2 relative">
+        <Title3 />
         <div
+          ref={containerRef}
           style={{ scrollbarWidth: "none" }}
           className="flex gap-3 overflow-x-scroll p-2"
         >
@@ -109,6 +91,14 @@ function RowThree() {
               </div>
             ))}
         </div>
+        {/* arrows left and right */}
+        {rightArrow && (
+          <ArrowRight className="absolute top-[50%] translate-y-[-50%] right-3 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-400 text-[25px] text-white cursor-pointer opacity-80 hover:opacity-100" />
+        )}
+        {leftArrow && (
+          <ArrowLeft className="absolute top-[50%] translate-y-[-50%] left-3 w-10 h-10 flex items-center justify-center rounded-full bg-neutral-400 text-[25px] text-white cursor-pointer opacity-80 hover:opacity-100" />
+        )}
+        {/*  */}
       </div>
     </div>
   );
