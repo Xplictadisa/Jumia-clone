@@ -14,11 +14,7 @@ import {
   others,
 } from "@/app/_data/product-category";
 
-type param = {
-  params: {
-    category: string;
-  };
-};
+
 
 const allCategory = {
   appliances,
@@ -35,8 +31,12 @@ const allCategory = {
   others
 };
 
-export async function GET(request: NextRequest, { params }: param) {
-  const { category } = params;
+export async function GET(
+  request: NextRequest,
+  context: { params: { category: string } }
+) {
+  const { category } = context.params;
+  const data = allCategory[category as keyof typeof allCategory]
 
-  return NextResponse.json(allCategory[category]);
+  return NextResponse.json(data);
 }
