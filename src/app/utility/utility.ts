@@ -12,7 +12,7 @@ function discount(oldPrice: number|undefined, newPrice: number) {
   return `${discount}%`;
 }
 
-function countDown(countDown: number) {
+function countDown(countDown: number): string {
   const totalTime = countDown;
   const hr = Math.floor(totalTime / 3600);
   const min = Math.floor((totalTime % 3600) / 60);
